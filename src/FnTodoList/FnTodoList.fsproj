@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="**\*.xaml" />
+    <Compile Include="FnTodoListPage.xaml.fs" />
+    <Compile Include="App.xaml.fs" />
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.18342" />
+  </ItemGroup>
+</Project>
