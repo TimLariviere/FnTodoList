@@ -1,4 +1,4 @@
-﻿namespace FnTodoList0.Droid.Properties
+﻿namespace FnTodoList.Droid.Properties
 open System.Reflection
 open System.Runtime.CompilerServices
 

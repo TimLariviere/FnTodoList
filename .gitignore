@@ -215,3 +215,15 @@ FakesAssemblies/
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
+
+\.idea/\.idea\.FnTodoList/\.idea/contentModel\.xml
+
+\.idea/\.idea\.FnTodoList/\.idea/indexLayout\.xml
+
+\.idea/\.idea\.FnTodoList/\.idea/modules\.xml
+
+\.idea/\.idea\.FnTodoList/\.idea/vcs\.xml
+
+\.idea/\.idea\.FnTodoList/\.idea/workspace\.xml
+
+\.idea/\.idea\.FnTodoList/riderModule\.iml
