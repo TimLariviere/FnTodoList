@@ -3,4 +3,4 @@
 open Xamarin.Forms
 
 type App() =
-    inherit Application(MainPage = FnTodoListPage())
+    inherit Application(MainPage = NavigationPage(HomePage()))
