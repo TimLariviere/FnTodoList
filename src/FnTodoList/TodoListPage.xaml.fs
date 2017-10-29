@@ -8,9 +8,9 @@ type Todo =
         Text: string
     }
 
-type HomePage() as this =
+type TodoListPage() as this =
     inherit ContentPage()
-    let _ = base.LoadFromXaml(typeof<HomePage>)
+    let _ = base.LoadFromXaml(typeof<TodoListPage>)
     do this.BindingContext <- [
         { Text = "Hello World" };
         { Text = "Hello World1" };

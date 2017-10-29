@@ -1,18 +1,15 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-	</PropertyGroup>
-	<ItemGroup>
-		<EmbeddedResource Include="FnTodoListPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
-		<EmbeddedResource Include="HomePage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
-		<EmbeddedResource Include="App.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
-		<Compile Include="FnTodoListPage.xaml.fs" />
-		<Compile Include="HomePage.xaml.fs" />
-		<Compile Include="App.xaml.fs" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Xamarin.Forms" Version="2.4.0.18342" />
-	</ItemGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TodoItemPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+    <Compile Include="TodoItemPage.xaml.fs" />
+    <EmbeddedResource Include="TodoListPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+    <Compile Include="TodoListPage.xaml.fs" />
+    <EmbeddedResource Include="App.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+    <Compile Include="App.xaml.fs" />
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.18342" />
+  </ItemGroup>
 </Project>
