@@ -4,12 +4,12 @@
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="TodoItemPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <Compile Include="TodoItemPage.xaml.fs" />
-    <EmbeddedResource Include="TodoListPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+    <EmbeddedResource Include="TodoItemPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <Compile Include="TodoListPage.xaml.fs" />
-    <EmbeddedResource Include="App.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
+    <EmbeddedResource Include="TodoListPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <Compile Include="App.xaml.fs" />
+    <EmbeddedResource Include="App.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.18342" />
   </ItemGroup>
 </Project>
