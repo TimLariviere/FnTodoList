@@ -4,6 +4,7 @@
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DataContext.fs" />
     <Compile Include="TodoItemPage.xaml.fs" />
     <EmbeddedResource Include="TodoItemPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <Compile Include="TodoListPage.xaml.fs" />
@@ -11,5 +12,8 @@
     <Compile Include="App.xaml.fs" />
     <EmbeddedResource Include="App.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <PackageReference Include="Xamarin.Forms" Version="2.4.0.18342" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FnTodoList.Core\FnTodoList.Core.fsproj" />
   </ItemGroup>
 </Project>

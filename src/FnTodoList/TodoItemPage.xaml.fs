@@ -3,8 +3,10 @@
 open System
 open Xamarin.Forms
 open Xamarin.Forms.Xaml
+open FnTodoList.Core
+open FnTodoList.Core.UseCases
 
-type TodoItemPage() as this =
+type TodoItemPage(id: Guid option) as this =
     inherit ContentPage()
     let _ = base.LoadFromXaml(typeof<TodoItemPage>)
 
@@ -19,11 +21,27 @@ type TodoItemPage() as this =
         titleEntry.Text <- "Clicked"
     )
 
+    let createData() =
+        this.Title <- "New note"
+        titleEntry.Text <- String.Empty
+        contentEditor.Text <- String.Empty
+
+    let loadData note =
+        this.Title <- "Edit note"
+        titleEntry.Text <- note.Title
+        contentEditor.Text <- note.Content
+
+
     override this.OnAppearing() =
-        titleEntry.Text <- "Title"
-        contentEditor.Text <- "Content"
         titleEntry.TextChanged.AddHandler onTitleTextChanged
         saveToolbarItem.Clicked.AddHandler onSaveClicked
+
+        match id with
+        | Some id -> 
+            match tryFindNoteById DataContext.Notes id with
+            | Some note -> loadData note
+            | None -> createData()
+        | None -> createData()
 
     override this.OnDisappearing() =
         titleEntry.TextChanged.RemoveHandler onTitleTextChanged

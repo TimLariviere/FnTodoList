@@ -13,6 +13,8 @@ Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "FnTodoList.Android", "apps\
 EndProject
 Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "FnTodoList.iOS", "apps\iOS\FnTodoList.iOS.fsproj", "{2BDA8261-13A0-49B2-ACF0-E384B9BDFF21}"
 EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "FnTodoList.Core", "src\FnTodoList.Core\FnTodoList.Core.fsproj", "{FAC06E07-A1F9-4E73-99F0-83960259418A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,10 +61,23 @@ Global
 		{2BDA8261-13A0-49B2-ACF0-E384B9BDFF21}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{2BDA8261-13A0-49B2-ACF0-E384B9BDFF21}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{2BDA8261-13A0-49B2-ACF0-E384B9BDFF21}.Debug|iPhone.Build.0 = Debug|iPhone
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|iPhone.Build.0 = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FAC06E07-A1F9-4E73-99F0-83960259418A}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6E1C107F-3C1F-4CEA-BC0E-379CCAEBE7C4} = {4139EBBC-39EF-4E7A-AE11-33FCE1032D19}
 		{9EBA34C7-8338-4005-95A5-681586D7519B} = {870630FF-0B79-4F41-AC4F-278CF1871481}
 		{2BDA8261-13A0-49B2-ACF0-E384B9BDFF21} = {870630FF-0B79-4F41-AC4F-278CF1871481}
+		{FAC06E07-A1F9-4E73-99F0-83960259418A} = {4139EBBC-39EF-4E7A-AE11-33FCE1032D19}
 	EndGlobalSection
 EndGlobal
