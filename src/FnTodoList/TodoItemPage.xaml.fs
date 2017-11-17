@@ -4,14 +4,14 @@ open System
 open Xamarin.Forms
 open Xamarin.Forms.Xaml
 open FnTodoList.Core
-open FnTodoList.Core.UseCases
+open FnTodoList.Core.DomainTypes
 
-type TodoItemPage(id: Guid option) as this =
+type TodoItemPage(id: int option) as this =
     inherit ContentPage()
     let _ = base.LoadFromXaml(typeof<TodoItemPage>)
 
     // Fields
-    let mutable _id = Guid.Empty
+    let mutable _id = -1
 
     // Controls
     let titleEntry = this.FindByName("TitleEntry") :> Entry
@@ -32,7 +32,7 @@ type TodoItemPage(id: Guid option) as this =
     let init() =
         _id <- match id with
                | Some id -> id
-               | None -> Guid.Empty
+               | None -> -1
 
         if Option.isSome id then
             match tryFindNoteById DataContext.Notes (Option.get id) with

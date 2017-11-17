@@ -1,11 +1,10 @@
 namespace FnTodoList.Core
 
-[<AutoOpen>]
-module Types =
+module DomainTypes =
     open System
 
     type Note = {
-        Id: Guid
+        Id: int
         Title: string
         Content: string
     }

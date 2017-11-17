@@ -3,9 +3,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Types.fs" />
-    <Compile Include="Entities.fs" />
-    <Compile Include="UseCases.fs" />
+    <Compile Include="DomainTypes.fs" />
+    <Compile Include="PersistenceTypes.fs" />
+    <Compile Include="PersistenceHelpers.fs" />
+    <Compile Include="NoteRepository.fs" />
+    <Compile Include="NoteService.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />

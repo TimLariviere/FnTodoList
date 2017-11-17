@@ -4,7 +4,9 @@
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Platform.fs" />
     <Compile Include="DataContext.fs" />
+    <Compile Include="UseCases.fs" />
     <Compile Include="TodoItemPage.xaml.fs" />
     <EmbeddedResource Include="TodoItemPage.xaml" Generator="MSBuild:UpdateDesignTimeXaml" />
     <Compile Include="TodoListPage.xaml.fs" />

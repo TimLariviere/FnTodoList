@@ -4,6 +4,7 @@ open System
 open Xamarin.Forms
 open Xamarin.Forms.Xaml
 open FnTodoList.Core
+open FnTodoList.Core.DomainTypes
 
 type TodoListPage() as this =
     inherit ContentPage()
@@ -16,7 +17,7 @@ type TodoListPage() as this =
     // Methods
     let navigateToDetail id =
         this.Navigation.PushAsync(TodoItemPage(id)) |> ignore
-
+    
     // Event handlers
     let onTodoListViewItemTapped = EventHandler<ItemTappedEventArgs>(fun _ args ->
         let note = args.Item :?> Note
@@ -28,11 +29,18 @@ type TodoListPage() as this =
 
     // Lifecycle
     override this.OnAppearing() =
-        this.BindingContext <- DataContext.Notes
-
-        todoListView.ItemTapped.AddHandler onTodoListViewItemTapped
-        newNoteToolbarItem.Clicked.AddHandler onNewNoteToolbarItemClicked
-
+        let ifLoadedFunc x = 
+            this.BindingContext <- DataContext.Notes
+            todoListView.ItemTapped.AddHandler onTodoListViewItemTapped
+            newNoteToolbarItem.Clicked.AddHandler onNewNoteToolbarItemClicked
+            
+        let ifNotLoadedFunc e =
+            this.DisplayAlert("Error", "Error while initializing the application", "OK") |> Async.AwaitTask |> ignore
+    
+        UseCases.initializeAppData()
+        |> AsyncRop.runAsync ifLoadedFunc ifNotLoadedFunc
+        |> ignore
+    
     override this.OnDisappearing() =
         todoListView.ItemTapped.RemoveHandler onTodoListViewItemTapped
         newNoteToolbarItem.Clicked.RemoveHandler onNewNoteToolbarItemClicked
