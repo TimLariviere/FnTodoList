@@ -9,6 +9,8 @@ open FnTodoList.Core.DomainTypes
 type TodoListPage() as this =
     inherit ContentPage()
     let _ = base.LoadFromXaml(typeof<TodoListPage>)
+    
+    static let mutable _notInitialized = true
 
     // Controls
     let todoListView = this.FindByName "TodoListView" :> ListView
@@ -30,11 +32,16 @@ type TodoListPage() as this =
     // Lifecycle
     override this.OnAppearing() = 
         async {
-            do! (UseCases.initializeAppData()
-                |> AsyncRop.evaluateAsync
-                  (fun x -> this.DisplayAlert("Loaded", "All data loaded", "OK") |> Async.AwaitTask |> ignore)
-                  (fun err -> this.DisplayAlert("Error", "Error while initializing the application", "OK") |> Async.AwaitTask |> ignore)
-                |> AsyncRop.ignoreAsync)
+            if _notInitialized then
+                do! (UseCases.initializeAppData()
+                    |> AsyncRop.evaluateAsync
+                      (fun x -> this.DisplayAlert("Loaded", "All data loaded", "OK") |> Async.AwaitTask |> ignore)
+                      (fun err -> this.DisplayAlert("Error", "Error while initializing the application", "OK") |> Async.AwaitTask |> ignore)
+                    |> AsyncRop.ignoreAsync)
+                    
+                _notInitialized <- false
+            else
+                ()
               
             this.BindingContext <- DataContext.Notes
             todoListView.ItemTapped.AddHandler onTodoListViewItemTapped
