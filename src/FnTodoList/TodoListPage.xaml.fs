@@ -28,18 +28,18 @@ type TodoListPage() as this =
     )
 
     // Lifecycle
-    override this.OnAppearing() =
-        let ifLoadedFunc x = 
+    override this.OnAppearing() = 
+        async {
+            do! (UseCases.initializeAppData()
+                |> AsyncRop.evaluateAsync
+                  (fun x -> this.DisplayAlert("Loaded", "All data loaded", "OK") |> Async.AwaitTask |> ignore)
+                  (fun err -> this.DisplayAlert("Error", "Error while initializing the application", "OK") |> Async.AwaitTask |> ignore)
+                |> AsyncRop.ignoreAsync)
+              
             this.BindingContext <- DataContext.Notes
             todoListView.ItemTapped.AddHandler onTodoListViewItemTapped
             newNoteToolbarItem.Clicked.AddHandler onNewNoteToolbarItemClicked
-            
-        let ifNotLoadedFunc e =
-            this.DisplayAlert("Error", "Error while initializing the application", "OK") |> Async.AwaitTask |> ignore
-    
-        UseCases.initializeAppData()
-        |> AsyncRop.runAsync ifLoadedFunc ifNotLoadedFunc
-        |> ignore
+        } |> ignore
     
     override this.OnDisappearing() =
         todoListView.ItemTapped.RemoveHandler onTodoListViewItemTapped

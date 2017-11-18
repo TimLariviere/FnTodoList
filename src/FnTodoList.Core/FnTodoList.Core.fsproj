@@ -3,6 +3,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure.fs" />
     <Compile Include="DomainTypes.fs" />
     <Compile Include="PersistenceTypes.fs" />
     <Compile Include="PersistenceHelpers.fs" />
